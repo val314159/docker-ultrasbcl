@@ -5,8 +5,7 @@
 ;;(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
 
-(add-to-list 'load-path "~/slime")
+(add-to-list 'load-path "~/slime.git")
 (require 'slime-autoloads)
 
 (setq inferior-lisp-program "/usr/bin/sbcl")
-

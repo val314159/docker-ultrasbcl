@@ -2,8 +2,9 @@
 run: build
 	docker run --rm -it t
 
-build: slime
+build: slime.git
 	docker build  .  -t t
 
-slime:
-	git clone https://github.com/slime/slime
+slime.git:
+	git clone https://github.com/slime/slime.git slime.git
+
