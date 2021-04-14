@@ -7,6 +7,10 @@
 
 (setq inferior-lisp-program "/usr/bin/sbcl")
 
+(defvar dir "~/quicklisp/dists/ultralisp/software/slime-slime-20210219060136/")
+(add-to-list 'load-path dir)
+(require 'slime-autoloads)
+
 (setq slime-contribs '(slime-scratch slime-editing-commands))
 
 (load (expand-file-name "~/quicklisp/slime-helper.el"))
