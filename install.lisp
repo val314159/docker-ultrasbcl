@@ -6,3 +6,8 @@
 
 (with-open-file (out "/root/.sbclrc" :direction :output)
   (format out "(load \"/root/quicklisp\/setup.lisp\")"))
+
+(ql-dist:install-dist "http://dist.ultralisp.org/" :prompt nil)
+
+(ql:quickload :ly)
+
