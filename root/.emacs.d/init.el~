@@ -5,9 +5,14 @@
 ;;(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
 
-(add-to-list 'load-path "~/slime.git")
-(require 'slime-autoloads)
-
 (setq inferior-lisp-program "/usr/bin/sbcl")
+
+;;(add-to-list 'load-path "~/slime/slime.git")
+;;(add-to-list 'load-path "~/quicklisp/dists/quicklisp/software/slime-2.14")
+;;(require 'slime-autoloads)
+
+(setq slime-contribs '(slime-scratch slime-editing-commands))
+
+(load (expand-file-name "~/quicklisp/slime-helper.el"))
 
 (slime)

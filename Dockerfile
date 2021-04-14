@@ -5,9 +5,7 @@ RUN apt-get -y update && apt-get -y upgrade && apt-get install -y \
  && apt-get clean
 ENV HOME /root
 WORKDIR ${HOME}
-RUN wget http://beta.quicklisp.org/quicklisp.lisp -P /tmp
-ADD install.lisp /tmp/install.lisp
-RUN cd /tmp && sbcl --script install.lisp && rm /tmp/*lisp
-ADD .emacs ${HOME}/
-ADD slime.git ${HOME}/slime.git
-
+ADD quicklisp.lisp install.lisp /tmp/
+RUN cd /tmp && sbcl --script install.lisp && rm /tmp/*.lisp
+ADD root /root/
+#ADD slime  ${HOME}/slime

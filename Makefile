@@ -2,9 +2,12 @@
 run: build
 	docker run --rm -it t
 
-build: slime.git
+build: quicklisp.lisp
 	docker build  .  -t t
 
-slime.git:
-	git clone https://github.com/slime/slime.git slime.git
+quicklisp.lisp:
+	wget http://beta.quicklisp.org/quicklisp.lisp
 
+clean:
+	rm -fr quicklisp.lisp
+	tree .

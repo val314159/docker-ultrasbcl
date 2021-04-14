@@ -9,5 +9,6 @@
 
 (ql-dist:install-dist "http://dist.ultralisp.org/" :prompt nil)
 
+(ql:quickload :quicklisp-slime-helper)
 (ql:quickload :ly)
-
+(ql:quickload :cl-repl)
