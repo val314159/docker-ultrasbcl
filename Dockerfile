@@ -12,4 +12,6 @@ libssl-dev libcurl3 apt-utils curl \
  ros run -e '(ql-dist:install-dist "http://dist.ultralisp.org/" :prompt nil)' -q && \
  mkdir -p ${HOME}/common-lisp
 ADD root  ${HOME}/
+WORKDIR   ${HOME}/
+RUN ros install r
 EXPOSE 4242 4243
