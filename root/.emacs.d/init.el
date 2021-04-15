@@ -6,7 +6,7 @@
 (package-initialize)
 
 ;;(setq inferior-lisp-program "/usr/bin/sbcl")
-(setq inferior-lisp-program "/usr/bin/ros")
+(setq inferior-lisp-program "/usr/bin/ros run")
 
 (defvar dir "~/quicklisp/dists/ultralisp/software/slime-slime-20210219060136/")
 (add-to-list 'load-path dir)
