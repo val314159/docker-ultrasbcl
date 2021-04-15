@@ -1,10 +1,11 @@
 DOPTS=-v ${HOME}/src:/root/common-lisp -p 4242:4242 -p 4243:4243
 
 run: build
-	docker run --rm -it ${DOPTS} t
+	docker run --rm -it ${DOPTS} t /root/.roswell/bin/r
 
 build:
 	docker build  .  -t t
 
 push:
-	docker push val314159/ultrasbcl
+	docker tag t val314159/ultrasbcl
+	docker push  val314159/ultrasbcl
