@@ -5,15 +5,18 @@
 ;;(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
 
-;;(setq inferior-lisp-program "/usr/bin/sbcl")
+;;(setq inferior-lisp-program "/usr/bin/sbcl --load /root/swank-loader.lisp")
+;;(setq inferior-lisp-program "/usr/bin/ros -l ~/swank-loader.lisp run")
 (setq inferior-lisp-program "/usr/bin/ros run")
 
-(defvar dir "~/quicklisp/dists/ultralisp/software/slime-slime-20210219060136/")
-(add-to-list 'load-path dir)
-(require 'slime-autoloads)
+;;(defvar dir "~/quicklisp/dists/ultralisp/software/slime-slime-20210219060136/")
+;;(add-to-list 'load-path dir)
+;;(require 'slime-autoloads)
 
 (setq slime-contribs '(slime-scratch slime-editing-commands))
 
-(load (expand-file-name "~/quicklisp/slime-helper.el"))
+(load (expand-file-name "~/.roswell/lisp/quicklisp/slime-helper.el"))
+
+;;(load (expand-file-name "~/quicklisp/slime-helper.el"))
 
 (slime)
