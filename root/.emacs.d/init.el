@@ -5,7 +5,8 @@
 ;;(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
 
-(setq inferior-lisp-program "/usr/bin/sbcl")
+;;(setq inferior-lisp-program "/usr/bin/sbcl")
+(setq inferior-lisp-program "/usr/bin/ros")
 
 (defvar dir "~/quicklisp/dists/ultralisp/software/slime-slime-20210219060136/")
 (add-to-list 'load-path dir)

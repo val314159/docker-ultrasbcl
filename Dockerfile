@@ -8,7 +8,7 @@ RUN apt-get -y update && apt-get -y upgrade && apt-get install -y libssl-dev lib
  wget ${PFX}/v${VER}/${DEB} && dpkg -i ${DEB} && rm ${DEB} && apt-get clean
 ADD quicklisp.lisp install.lisp /tmp/
 RUN cd /tmp && sbcl --script install.lisp && rm /tmp/*.lisp
-RUN ros install parenscript hunchentoot hunchensocket cl-who
+RUN ros install parenscript hunchentoot hunchensocket cl-who quicklisp-slime-helper
 ENV HOME /root
 #ENV USER val
 #ENV HOME /home/${USER}
