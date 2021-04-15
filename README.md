@@ -1,4 +1,5 @@
 Ultrasbcl Dockerfile
 ====================
 
-this uses ros
+this uses ros plus some other stuff
+
