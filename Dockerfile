@@ -13,5 +13,5 @@ libssl-dev libcurl3 apt-utils curl \
  mkdir -p ${HOME}/common-lisp
 ADD root  ${HOME}/
 WORKDIR   ${HOME}/
-RUN ros install r
+RUN ros install r val314159/ly
 EXPOSE 4242 4243
