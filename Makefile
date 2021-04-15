@@ -5,3 +5,6 @@ run: build
 
 build:
 	docker build  .  -t t
+
+push:
+	docker push val314159/ultrasbcl
