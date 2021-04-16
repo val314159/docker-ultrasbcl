@@ -6,6 +6,6 @@ run: build
 build:
 	docker build  .  -t t
 
-push:
+push: build
 	docker tag t val314159/ultrasbcl
 	docker push  val314159/ultrasbcl
