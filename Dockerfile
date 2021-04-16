@@ -14,5 +14,6 @@ RUN apt-get -y update && apt-get -y upgrade && apt-get install -y \
     ros run -e '(ql-dist:install-dist "http://dist.ultralisp.org/" :prompt nil)' -q && \
     mkdir -p ${HOME}/common-lisp && \
     ros install val314159/ly val314159/r2 && \
+    cp ~/.roswell/local-projects/val314159/r2/roswell/r2.ros lisp.ros && \
     ros build lisp.ros && mv lisp /usr/bin
 EXPOSE 4242 4243
