@@ -18,8 +18,8 @@ exec ros -Q -- $0 "$@"
 (in-package :r)
 
 (defvar *argv*)
-(defvar *ps1* "lisp>-? ")
-(defvar *ps2* "lisp... ")
+(defvar *ps1* ">-? ")
+(defvar *ps2* "... ")
 
 (defun read-prompt (&optional ps (file *debug-io*))
   (princ (or ps *ps1*) file)
@@ -27,7 +27,8 @@ exec ros -Q -- $0 "$@"
   (read))
 
 (defun printlns (&optional (x "") (file *standard-output*))
-  (fresh-line file)
+  (fresh-line)
+  (princ ">>> " file)
   (princ x file)
   (terpri file)
   x)
@@ -42,14 +43,14 @@ exec ros -Q -- $0 "$@"
       (end-of-file (c)
 	(return-from repl c))
       (t (c)
-	(format *debug-io* ">> Condition:[~s] ~a~%" c c)))))
+	 (printlnd (format nil "Condition:[~s] ~a" c c))))))
 
 (defun cli (argv)
   (declare (ignorable argv))
-  (printlnd ">> Hello!")
+  (printlnd "Hello!")
   (repl)
   (fresh-line)
-  (printlnd ">> Bye!"))
+  (printlnd "Bye!"))
 
 (defun main (&rest argv)
   (declare (ignorable argv))
